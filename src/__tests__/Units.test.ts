@@ -1,7 +1,14 @@
-import { c2f, f2c } from "../temp_units"
+import { c2f, c2k, f2c, f2k, k2c, k2f } from "../temp_units"
 
 test("Temp Units", () => {
-  expect(c2f(15.9)).toBe(60.6);
+  const C = 15.9, F = 60.6, K = 289.0;
 
-  expect(f2c(75.8)).toBe(24.3);
+  expect(c2f(C)).toBe(F);
+  expect(c2k(C)).toBe(K);
+
+  expect(f2c(F)).toBe(C);
+  expect(f2k(F)).toBe(K);
+
+  expect(k2c(K)).toBe(C);
+  expect(k2f(K)).toBe(F);
 })
