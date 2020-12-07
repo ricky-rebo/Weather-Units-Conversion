@@ -1,6 +1,6 @@
 {
   "name": "weather-units-conversion",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple utility package to convert weather data across various measure units",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,12 +9,11 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
