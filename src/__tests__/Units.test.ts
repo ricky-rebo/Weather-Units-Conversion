@@ -1,7 +1,11 @@
 import { c2f, c2k, f2c, f2k, k2c, k2f } from "../temp_units"
 
+import { ms2kts, ms2mph, ms2kmh, kmh2kts, kmh2ms, kmh2mph, mph2ms, mph2kmh, mph2kts, kts2ms, kts2kmh, kts2mph } from "../speed_units";
+
 test("Temp Units", () => {
-  const C = 15.9, F = 60.6, K = 289.0;
+  const C = 19.92,
+    F = 67.86,
+    K = 293.07;
 
   expect(c2f(C)).toBe(F);
   expect(c2k(C)).toBe(K);
@@ -11,4 +15,27 @@ test("Temp Units", () => {
 
   expect(k2c(K)).toBe(C);
   expect(k2f(K)).toBe(F);
+})
+
+test("Speed Units", () => {
+  const MS = 7.96, 
+    KMH = 28.66,
+    MPH = 17.81,
+    KTS = 15.47;
+
+  expect(ms2kmh(MS)).toBe(KMH);
+  expect(ms2kts(MS)).toBe(KTS);
+  expect(ms2mph(MS)).toBe(MPH);
+
+  expect(kmh2ms(KMH)).toBe(MS);
+  expect(kmh2mph(KMH)).toBe(MPH);
+  expect(kmh2kts(KMH)).toBe(KTS);
+
+  expect(kts2ms(KTS)).toBe(MS);
+  expect(kts2kmh(KTS)).toBe(KMH);
+  expect(kts2mph(KTS)).toBe(MPH);
+
+  expect(mph2ms(MPH)).toBe(MS);
+  expect(mph2kmh(MPH)).toBe(KMH);
+  expect(mph2kts(MPH)).toBe(KTS);
 })
