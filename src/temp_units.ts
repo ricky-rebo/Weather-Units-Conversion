@@ -1,4 +1,4 @@
-import { round } from "./rounding";
+import round from "./rounding";
 
 // From Celsius
 export const c2f = (val: number, precision?: number) => round(((val * 9 / 5) + 32), precision || 1);
