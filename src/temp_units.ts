@@ -1,24 +1,26 @@
 import round from "./rounding";
 
-// From Celsius
-export const c2f = (val: number, precision?: number) => round(((val * 9 / 5) + 32), precision || 1);
-export const celsiusToFahrenheit = c2f;
+const DEF_PRECISION = 2;
 
-export const c2k = (val: number, precision?: number) => round(val + 273.15, precision || 1);
-export const celsiusToKelvin = c2k;
+/* ***  FROM CELSIUS  *** */
+// C -> F
+export const c2f = (val: number, decimals?: number) => round(((val * 9/5) + 32), decimals || DEF_PRECISION);
 
-
-// From Fahrenheit 
-export const f2c = (val: number, precision?: number) => round(((val - 32) * 5 / 9), precision || 1);
-export const fahrenheitToCelsius = f2c;
-
-export const f2k = (val: number, precision?: number) => round(c2k(f2c(val)), precision || 1);
-export const fahrenheitToKelvin = f2k;
+// C -> K
+export const c2k = (val: number, decimals?: number) => round(val + 273.15, decimals || DEF_PRECISION);
 
 
-// From Kelvin
-export const k2c = (val: number, precision?: number) => round(val - 273.15, precision || 1);
-export const kelvinToCelsius = k2c;
+/* ***  FROM FAHRENHEIT  *** */
+// F -> C
+export const f2c = (val: number, decimals?: number) => round(((val - 32) * 5/9), decimals || DEF_PRECISION);
 
-export const k2f = (val: number, precision?: number) => round(c2f(k2c(val)), precision || 1);
-export const kelvinToFahrenheit = k2f;
+// F -> K
+export const f2k = (val: number, decimals?: number) => c2k(f2c(val, decimals), decimals);
+
+
+/* ***  FROM KELVIN  *** */
+// K -> C
+export const k2c = (val: number, decimals?: number) => round(val - 273.15, decimals || DEF_PRECISION);
+
+// K -> F
+export const k2f = (val: number, decimals?: number) => c2f(k2c(val, decimals), decimals);
