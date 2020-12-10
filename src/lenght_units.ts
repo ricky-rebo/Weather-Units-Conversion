@@ -12,7 +12,7 @@ export const m2ft = (val: number, decimals?: number) => round((val * 3.280839895
 
 
 // km -> miles
-//export const km2miles = (val: number, decimals?: number) => round((val / 1.609344), decimals || DEF_PRECISION);
+// export const km2miles = (val: number, decimals?: number) => round((val / 1.609344), decimals || DEF_PRECISION);
 export const km2miles = (val: number, decimals?: number) => nmiles2miles(km2nmiles(val, decimals), decimals);
 
 // km -> nautical miles
@@ -26,7 +26,7 @@ export const km2nmiles = (val: number, decimals?: number) => round((val / 1.8520
 export const in2mm = (val: number, decimals?: number) => round((val * 25.4), decimals || DEF_PRECISION);
 
 
-//feet -> meters
+// feet -> meters
 export const ft2m = (val: number, decimals?: number) => round((val / 3.2808398950131), decimals || DEF_PRECISION);
 
 
@@ -37,7 +37,7 @@ export const nmiles2miles = (val: number, decimals?: number) => round((val * 1.1
 export const miles2nmiles = (val: number, decimals?: number) => round((val / 1.1507794480235), decimals || DEF_PRECISION);
 
 // miles -> km
-//export const miles2km = (val: number, decimals?: number) => round((val * 1.609344), decimals || DEF_PRECISION);
+// export const miles2km = (val: number, decimals?: number) => round((val * 1.609344), decimals || DEF_PRECISION);
 export const miles2km = (val: number, decimals?: number) => nmiles2km(miles2nmiles(val, decimals), decimals);
 
 // nautical miles -> km

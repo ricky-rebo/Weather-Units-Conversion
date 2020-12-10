@@ -11,7 +11,7 @@ export const hpa2kpa = (val: number, decimals?: number) => round((val / 10), dec
 // inHg -> hPa (@0°C)
 export const inhg2hpa = (val: number, decimals?: number) => round((val / 0.029528744), decimals || 1);
 
-//inHg -> kpa
+// inHg -> kpa
 export const inhg2kpa = (val: number, decimals?: number) => hpa2kpa(inhg2hpa(val, decimals), decimals);
 
 
