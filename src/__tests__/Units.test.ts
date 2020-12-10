@@ -1,6 +1,7 @@
 import { c2f, c2k, f2c, f2k, k2c, k2f } from "../temp_units"
 import { ms2kts, ms2mph, ms2kmh, kmh2kts, kmh2ms, kmh2mph, mph2ms, mph2kmh, mph2kts, kts2ms, kts2kmh, kts2mph } from "../speed_units";
-import { hpa2inhg, hpa2kpa, kpa2hpa, kpa2inhg, inhg2hpa, inhg2kpa } from "../press_units"; 
+import { hpa2inhg, hpa2kpa, kpa2hpa, kpa2inhg, inhg2hpa, inhg2kpa } from "../press_units";
+import { mm2in, m2ft, km2miles, km2nmiles, in2mm, ft2m, miles2nmiles, nmiles2miles, miles2km, nmiles2km } from "../lenght_units";
 
 test("Temp Units", () => {
   const C = 19.92,
@@ -53,4 +54,32 @@ test("Press Units", () => {
 
   expect(inhg2hpa(INHG)).toBe(HPA);
   expect(inhg2kpa(INHG)).toBe(KPA);
+})
+
+test("Lenght Units", () => {
+  const MM = 24.89, IN = 0.98,
+    M = 55.61, FT = 182.45,
+    KM = 11.63, MI = 7.23, NMI = 6.28;
+  
+  const KM_P = 87.05069, MI_P = 54.09079;
+  
+  expect(mm2in(MM)).toBe(IN);
+  expect(in2mm(IN)).toBe(MM);
+
+  expect(m2ft(M)).toBe(FT);
+  expect(ft2m(FT)).toBe(M);
+
+  expect(km2miles(KM)).toBe(MI);
+  expect(km2nmiles(KM)).toBe(NMI);
+
+  expect(miles2km(MI)).toBe(KM);
+  expect(miles2nmiles(MI)).toBe(NMI);
+
+  expect(nmiles2km(NMI)).toBe(KM);
+  expect(nmiles2miles(NMI)).toBe(MI);
+
+
+  //MORE PRECISION
+  expect(km2miles(KM_P, 5)).toBe(MI_P);
+  expect(miles2km(MI_P, 5)).toBe(KM_P);
 })
