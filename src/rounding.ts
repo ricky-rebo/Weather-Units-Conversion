@@ -1,5 +1,5 @@
 const round = (num: number, decimalPos: number, base?: number) => {
-  let pow = Math.pow(base||10, decimalPos);
+  const pow = Math.pow(base||10, decimalPos);
   return Math.round(num * pow) / pow;
 }
 
