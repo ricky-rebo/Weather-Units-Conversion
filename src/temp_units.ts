@@ -1,22 +1,20 @@
-import round from "./rounding";
+import round from './rounding';
 
 const DEF_PRECISION = 2;
 
 /* ***  FROM CELSIUS  *** */
 // C -> F
-export const c2f = (val: number, decimals?: number) => round(((val * 9/5) + 32), decimals || DEF_PRECISION);
+export const c2f = (val: number, decimals?: number) => round((val * 9) / 5 + 32, decimals || DEF_PRECISION);
 
 // C -> K
 export const c2k = (val: number, decimals?: number) => round(val + 273.15, decimals || DEF_PRECISION);
 
-
 /* ***  FROM FAHRENHEIT  *** */
 // F -> C
-export const f2c = (val: number, decimals?: number) => round(((val - 32) * 5/9), decimals || DEF_PRECISION);
+export const f2c = (val: number, decimals?: number) => round(((val - 32) * 5) / 9, decimals || DEF_PRECISION);
 
 // F -> K
 export const f2k = (val: number, decimals?: number) => c2k(f2c(val, decimals), decimals);
-
 
 /* ***  FROM KELVIN  *** */
 // K -> C

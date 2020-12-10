@@ -1,6 +1,6 @@
 {
   "name": "weather-units-conversion",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A simple utility package to convert weather data across various measure units",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
