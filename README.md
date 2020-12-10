@@ -78,6 +78,7 @@ let miles = km2miles(11.67, 5);
 </ul>
 
 <hr/>
+
 ## Author
 
 👤 **Riccardo Rebottini**
