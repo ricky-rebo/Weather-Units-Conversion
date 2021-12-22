@@ -43,8 +43,8 @@ let miles = km2miles(11.67, 5);
 #### Temperature
 <ul>
   <li>Celsius (C)</li>
-  <li>Fahrenheit (C)</li>
-  <li>Kelvin (C)</li>
+  <li>Fahrenheit (F)</li>
+  <li>Kelvin (K)</li>
 </ul>
 
 #### Pressure
